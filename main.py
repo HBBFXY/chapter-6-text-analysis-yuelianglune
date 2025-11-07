@@ -14,9 +14,8 @@ def analyze_text(text):
     char_freq = {}
     for char in text:
         char_freq[char] = char_freq.get(char, 0) + 1
-    # 按“频率降序 + 字符升序”排序
+    # 按“频率降序 + 字符升序”严格排序
     sorted_items = sorted(char_freq.items(), key=lambda x: (-x[1], x[0]))
-    # 提取字符列表
     return [char for char, freq in sorted_items]
 
 # 主程序，已完整
